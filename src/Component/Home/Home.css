@@ -1,0 +1,160 @@
+/* Home Section */
+.home {
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  gap: 7em;
+  padding: 10px 4% 0;
+  flex-wrap: wrap; /* Ensure content stacks on smaller screens */
+}
+
+/* Profile Image */
+.home-content img {
+  width: 300px;
+  border-radius: 50%; /* Initial rounded appearance */
+  background-color: blanchedalmond;
+  margin-left: 100px;
+}
+
+@keyframes profile_animate {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 60% 40%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Content Area */
+.home-content {
+  width: 100%;              /* Ensures it stretches the full width */
+  display: flex;            /* Enables flex layout */
+  flex-direction: row;      /* Ensures items are side-by-side (default, but make it explicit) */
+  justify-content: center;  /* Optional: center items horizontally */
+  align-items: center;      /* Vertically align items */
+  gap: 5em;                 /* Space between the items */
+  flex-wrap: nowrap;        /* Don't stack unless screen is too small */
+}
+
+
+.home-content h1 {
+  font-size: 48px;
+  color:  #EC9D1E;
+}
+
+.home-content h1 span {
+  font-size: 52px;
+  color: rgb(101, 194, 231);
+}
+
+.home-content p {
+  font-size: 18px;
+  color: rgb(236, 171, 41);
+  margin-bottom: 20px;
+}
+
+/* Button */
+.button {
+  background-color: rgb(146, 224, 240);
+  color: black;
+  padding: 10px 26px;
+  margin: 10px 0 0; 
+  border-radius: 5px;
+  border: none; 
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: gold;
+}
+
+/* Picture Style */
+.pic {
+  border-radius: 80%;
+  width: 400px;
+  contain: content;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.pic:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2); 
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(196, 147, 23);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.965);
+  width: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    gap: 3em; 
+    padding: 60px 2%; 
+  }
+
+  .home-content h1 {
+    font-size: 36px; 
+  }
+
+  .home-content h1 span {
+    font-size: 40px; 
+  }
+
+  .home-content p {
+    font-size: 16px; 
+  }
+
+  .button {
+    padding: 8px 20px; 
+    font-size: 14px; 
+  }
+
+  .pic {
+    width: 250px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    flex-direction: column; 
+    align-items: center;
+    gap: 2em;
+  }
+
+  .home-content h1 {
+    font-size: 28px; 
+  }
+
+  .home-content h1 span {
+    font-size: 32px; 
+  }
+
+  .home-content p {
+    font-size: 14px; 
+  }
+
+  .pic {
+    width: 200px; 
+  }
+
+  .button {
+    padding: 6px 15px; 
+    font-size: 12px;
+  }
+}

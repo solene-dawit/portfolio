@@ -1,0 +1,118 @@
+.about {
+  width: 100vw; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px; 
+  gap: 2em; 
+}
+
+.about-content {
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+.about-content h2 {
+  text-align: center;
+  font-size: 1.8rem; 
+}
+
+.about-content h2 span {
+  color: goldenrod;
+}
+
+.about-content h3 {
+  text-align: center;
+  font-size: 1.5rem; 
+}
+
+.about-content h3 span {
+  color: goldenrod;
+}
+
+.about-content p {
+  font-size: 1rem; 
+  line-height: 1.6; 
+  text-align: center; 
+  margin: 1rem 0;
+}
+
+.btn-Testimony {
+  background-color: rgb(196, 147, 23);
+  color: black;
+  padding: 10px 26px;
+  border-radius: 5px;
+  box-shadow: none;
+  text-align: center;
+  display: inline-block; 
+  transition: background-color 0.3s ease; 
+}
+
+.btn-experience:hover {
+  background-color: gold;
+}
+
+.about-content h2,
+.about-content h3,
+.about-content p {
+  margin: 0 auto;
+}
+
+.dark-mode .about {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.light-mode .about {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 1.5rem; 
+  }
+
+  .about-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-experience {
+    padding: 8px 20px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 15px;
+  }
+
+  .about-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-content h3 {
+    font-size: 1rem;
+  }
+
+  .about-content p {
+    font-size: 0.85rem;
+  }
+
+  .btn-experience {
+    font-size: 0.9rem; 
+    padding: 6px 15px; 
+  }
+}

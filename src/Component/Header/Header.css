@@ -1,0 +1,77 @@
+/* General Header Container */
+.header-container {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: goldenrod; /* Light purple */
+}
+
+/* Main Flex Layout for Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* centers content horizontally */
+  flex-wrap: wrap;
+}
+
+/* Logo Styles */
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Navigation Links */
+.nav-bar {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(11, 10, 9);
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: gold;
+  border-bottom: 3px solid gold;
+}
+
+/* Dark Mode Toggle Button */
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  color: rgb(11, 10, 9);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.mode-toggle:hover {
+  color: gold;
+}
+
+/* Responsive - Collapses nav on small screens */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .action-buttons {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,202 @@
+/* Project Section */
+.sectionProject {
+  padding: 20px;
+  width: 100vw; 
+}
+
+.title-project {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.title-project span {
+  color: goldenrod;
+  font-weight: bold;
+}
+
+.light-mode .title-project {
+  color: #000000; 
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Default state (white heart) */
+.like-button {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* When liked (red heart) */
+.like-button.liked {
+  color: red;
+}
+.like-button:hover {
+  transform: scale(1.1);
+}
+
+
+/* Card Styling */
+.card {
+  background: #040404;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s forwards, fadeIn 1s forwards;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card .pic img {
+  height: 130px;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  color: goldenrod;
+  padding-bottom: 10px;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffeded;
+}
+
+.card button {
+  background: none;
+  border: none;
+  color: #ec9d1e;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card button:hover {
+  color: goldenrod;
+}
+
+
+
+/* Keyframes */
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: conic-gradient(
+    from var(--angle),
+    rgb(255, 137, 2),
+    rgb(5, 5, 7),
+    rgb(255, 137, 2)
+  );
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.card::before {
+  z-index: -2;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+.card:hover::after {
+  animation: glowing-border 3.5s linear infinite;
+}
+
+.card:hover::before {
+  animation: glowing-border 3.5s linear infinite,
+    blur-effect 3.5s linear infinite;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes blur-effect {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(9px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    width: 80%; 
+  }
+
+  .title-project {
+    font-size: 1.5rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; 
+  }
+
+  .card h1 {
+    font-size: 1.2rem; 
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .title-project {
+    font-size: 1.2rem;
+  }
+}
